@@ -1,0 +1,19 @@
+class Solution {
+    public int reverse(int x) {
+        long n=(long)Math.abs(x);
+        long rem,sum=0;
+        while(n>0){
+            rem=n%10;
+            sum=sum*10+rem;
+            n=n/10;
+        }
+       
+        if((sum<Integer.MIN_VALUE) || (sum>Integer.MAX_VALUE)){
+            return 0;
+        }
+         if(x<0){
+            return (int)(-1*sum);
+        }
+        return (int)sum;
+    }
+}
